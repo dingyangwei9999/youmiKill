@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="index-pic">
+     <image style="width: 200px; height: 200px;" src="../../images/youmikill.jpg"></image> 
+  </view>
+  <view class='index-title'>
+    <text>有</text>
+    <text>米</text>
+    <text>狼</text>
+    <text>杀</text>
+    <text>小</text>
+    <text>助</text>
+    <text>手</text>
+  </view>
+  <view class='index-btn'>
+    <button class='function-btn'>每周报名</button>
+    <button class='function-btn'>角色介绍</button>
+     <!-- <button class='function-btn'>法官助手</button>
+    <button class='function-btn'>对局记录</button>  -->
+  </view>
+</view>
