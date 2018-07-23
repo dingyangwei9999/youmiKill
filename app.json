@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/introduce/introduce",
+    "pages/signup/signup"
   ],
   "window": {
     "backgroundTextStyle": "light",

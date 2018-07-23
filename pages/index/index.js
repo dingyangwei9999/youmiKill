@@ -3,24 +3,18 @@
 var app = getApp()
 Page({
   data: {
-    motto: '2017 小程序我来啦',
-    userInfo: {}
   },
   //事件处理函数
-  bindViewTap: function() {
+  goSignupPage: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../signup/signup'
+    })
+  },
+  goIntroducePage: function () {
+    wx.navigateTo({
+      url: '../introduce/introduce'
     })
   },
   onLoad: function () {
-    console.log('onLoad')
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
-      })
-    })
   }
 })

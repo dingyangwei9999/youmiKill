@@ -13,8 +13,8 @@
     <text>手</text>
   </view>
   <view class='index-btn'>
-    <button class='function-btn'>每周报名</button>
-    <button class='function-btn'>角色介绍</button>
+    <button class='function-btn' bindtap='goSignupPage'>每周报名</button>
+    <button class='function-btn' bindtap='goIntroducePage'>角色介绍</button>
      <!-- <button class='function-btn'>法官助手</button>
     <button class='function-btn'>对局记录</button>  -->
   </view>
