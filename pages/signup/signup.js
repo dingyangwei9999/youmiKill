@@ -10,7 +10,22 @@ Page({
     wx.login({
       success: function (res) {
         if (res.code) {
-          console.log('登录成功', res.code);
+          // console.log('登录成功', res.code);
+          wx.request({
+            url: 'https://www.luoxj.club/login',
+            // method: 'POST',
+            data: {
+              code: res.code,
+              appid: 'wx270e69e69c9a2028',
+              secret: '75a4c95e5b953054ba8e32a2385d990b',
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success: function (d) {
+              console.log('登录成功', d.data)
+            }
+          })
         } else {
           console.log('登录失败！' + res.errMsg)
         }
