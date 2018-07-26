@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/introduce/introduce",
-    "pages/signup/signup"
+    "pages/signup/signup",
+    "pages/gameAssist/gameAssist"
   ],
   "window": {
     "backgroundTextStyle": "light",

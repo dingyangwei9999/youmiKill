@@ -15,6 +15,11 @@ Page({
       url: '../introduce/introduce'
     })
   },
+  goGameAssisPage: function () {
+    wx.navigateTo({
+      url: '../gameAssist/gameAssist'
+    })
+  },
   onLoad: function () {
   }
 })

@@ -1,0 +1,28 @@
+/* pages/gameAssist/gameAssist.wxss */
+.title{
+  height: 100rpx;
+  padding: 20px;
+  text-align: center;
+}
+.game-seat{
+  height: 890rpx;
+  padding: 0 80rpx 0 60rpx;
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.player-item{
+  flex-direction:column;
+  width: 160rpx;
+  height: 100rpx;
+  line-height: 80rpx;
+  border: 10px solid #eee;
+  text-align: center;
+  margin-top: 4rpx;
+  margin-left: 60rpx;
+  position: relative;
+}
+.detail-menu{
+  padding: 20rpx 40rpx;
+}

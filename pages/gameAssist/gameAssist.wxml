@@ -1,0 +1,24 @@
+<!--pages/gameAssist/gameAssist.wxml-->
+<view>
+  <view class='title'>
+    <text>小助手</text>
+  </view>
+  <view class='game-seat'>
+    <view wx:for="{{player}}" wx:for-index="index" wx:key="idx" class="player-item" 
+    bindtap='openDetail' data-index="{{index}}">
+      {{index + 1}}{{item.role}}
+    </view>
+  </view>
+  <action-sheet hidden="{{detailHidden}}" bindchange="switchDetailMenu">
+    <view class='detail-menu'>
+      <view>{{currentIdx + 1}}号玩家</view>
+      <view>
+        <radio-group class="radio-group" bindchange="roleChange">
+          <label class="radio" wx:for="{{gameRoles}}" wx:key="value">
+            <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+          </label>
+        </radio-group>
+      </view>
+    </view>
+  </action-sheet>
+</view>
