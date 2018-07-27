@@ -1,16 +1,16 @@
 <!--index.wxml-->
 <view class="container">
   <view class="index-pic">
-     <!-- <image style="width: 200px; height: 200px;" src="../../images/youmikill.jpg"></image>  -->
+     <image style="width: 200px; height: 200px;" src="../../images/youmikill.jpg"></image> 
   </view>
   <view class='index-title'>
-    <!-- <text>有</text>
+    <text>有</text>
     <text>米</text>
     <text>狼</text>
     <text>杀</text>
     <text>小</text>
     <text>助</text>
-    <text>手</text> -->
+    <text>手</text>
   </view>
   <view class='index-btn'>
     <button class='function-btn' bindtap='goSignupPage'>每周报名</button>

@@ -17,8 +17,13 @@ Page({
       { value: '猎人', name: '猎人' },
       { value: '守卫', name: '守卫' },
       { value: '白痴', name: '白痴' },
-      { value: '禁言', name: '禁言' },
+      { value: 'X', name: 'X' },
     ],
+    gameStatus: [
+      { value: '1', name: '生存', checked: 'true' },
+      { value: '0', name:'死亡' },
+    ],
+    godRoles: ['预言家', '女巫', '猎人', '守卫', '白痴', 'X'],
   },
   initPlayerData() {
     let arr = [];
@@ -26,7 +31,7 @@ Page({
       arr.push({
         idx: i,
         role: '',
-        status: 1,
+        status: '1',
       });
     }
     this.setData({
@@ -43,8 +48,10 @@ Page({
   initPlayerInfo() {
     var playerobj = this.data.player[this.data.currentIdx];
     var gameroles = this.data.gameRoles;
+    var gameStatus = this.data.gameStatus;
     var idx = gameroles.findIndex((obj) => (obj.value === playerobj.role))
-    var defalutarr = [
+    var idx2 = gameStatus.findIndex((obj) => (obj.value === playerobj.status))
+    var defaultRole = [
       { value: '', name: '无' },
       { value: '狼人', name: '狼人' },
       { value: '预言家', name: '预言家' },
@@ -52,11 +59,17 @@ Page({
       { value: '猎人', name: '猎人' },
       { value: '守卫', name: '守卫' },
       { value: '白痴', name: '白痴' },
-      { value: '禁言', name: '禁言' },
+      { value: 'X', name: 'X' },
     ];
-    defalutarr[idx].checked = 'true';
+    var defaultStatus = [
+      { value: '1', name: '生存' },
+      { value: '0', name: '死亡' },
+    ];
+    defaultRole[idx].checked = 'true';
+    defaultStatus[idx2].checked = 'true';
     this.setData({
-      gameRoles: defalutarr,
+      gameRoles: defaultRole,
+      gameStatus: defaultStatus,
     })
   },
   switchDetailMenu() {
@@ -67,6 +80,13 @@ Page({
   roleChange(e) {
     let arr = this.data.player;
     arr[this.data.currentIdx]['role'] = e.detail.value;
+    this.setData({
+      player: arr,
+    })
+  },
+  statusChange(e) {
+    let arr = this.data.player;
+    arr[this.data.currentIdx]['status'] = e.detail.value;
     this.setData({
       player: arr,
     })

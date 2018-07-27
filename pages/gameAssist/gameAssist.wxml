@@ -5,16 +5,25 @@
   </view>
   <view class='game-seat'>
     <view wx:for="{{player}}" wx:for-index="index" wx:key="idx" class="player-item" 
-    bindtap='openDetail' data-index="{{index}}">
+    bindtap='openDetail' data-index="{{index}}"
+    style="background:{{item.role=='狼人'?'#e06c75': (item.role==''?'#fff':'#fffda5')}}; border-color:{{item.status=='0'?'#fff':'#3482cb'}}">
       {{index + 1}}{{item.role}}
     </view>
   </view>
   <action-sheet hidden="{{detailHidden}}" bindchange="switchDetailMenu">
     <view class='detail-menu'>
-      <view>{{currentIdx + 1}}号玩家</view>
+      <view class='radio-label'>{{currentIdx + 1}}号玩家 身份：</view>
       <view>
         <radio-group class="radio-group" bindchange="roleChange">
           <label class="radio" wx:for="{{gameRoles}}" wx:key="value">
+            <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+          </label>
+        </radio-group>
+      </view>
+      <view class='radio-label'>{{currentIdx + 1}}号玩家 状态：</view>
+      <view>
+        <radio-group class="radio-group" bindchange="statusChange">
+          <label class="radio" wx:for="{{gameStatus}}" wx:key="value">
             <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
           </label>
         </radio-group>
