@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/introduce/introduce",
     "pages/signup/signup",
-    "pages/gameAssist/gameAssist"
+    "pages/gameAssist/gameAssist",
+    "pages/gameSetting/gamesetting"
   ],
   "window": {
     "backgroundTextStyle": "light",

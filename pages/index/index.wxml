@@ -4,18 +4,12 @@
      <image style="width: 200px; height: 200px;" src="../../images/youmikill.jpg"></image> 
   </view>
   <view class='index-title'>
-    <text>有</text>
-    <text>米</text>
-    <text>狼</text>
-    <text>杀</text>
-    <text>小</text>
-    <text>助</text>
-    <text>手</text>
+    <text>有米狼杀小助手</text>
   </view>
   <view class='index-btn'>
-    <button class='function-btn' bindtap='goSignupPage'>每周报名</button>
-    <!-- <button class='function-btn' bindtap='goIntroducePage'>角色介绍</button> -->
-    <button class='function-btn' bindtap='goGameAssisPage'>法官助手</button>
-    <!-- <button class='function-btn'>对局记录</button> -->
+    <!-- <button class='function-btn' bindtap='goSignupPage'>每周报名</button> -->
+    <!-- <button class='function-btn' bindtap='goGameSettingPage'>法官助手</button> -->
+    <i-button size="large" bind:click="goGameSettingPage"
+    shape="circle" i-class="function-btn">法官小助手</i-button>
   </view>
 </view>

@@ -1,0 +1,11 @@
+<!--pages/gameSetting/gamesetting.wxml-->
+<view class='player-container'>
+  <text class='player-title'>游戏人数</text>
+
+  <i-input-number value="{{ playerNum }}" min="8" max="18"
+    bindchange="changePlayerNumber" i-class="input-number"/>
+
+  <i-button type="primary" size="large" bind:click="goGameAssistPage"
+    shape="circle" i-class="start-game">START GAME</i-button>
+  
+</view>

@@ -1,15 +1,39 @@
 <!--pages/gameAssist/gameAssist.wxml-->
-<view>
+<view class="game-assist-container">
   <view class='title'>
-    <text>小助手</text>
+    <text>顺序： 守卫 => 狼人 => 女巫 => 预言家 => 猎人 => X => 白痴</text>
+  <!-- <i-steps>
+    <i-step status="finish">
+      <view slot="title">
+        已完成
+      </view>
+    </i-step>
+    <i-step status="process">
+      <view slot="title">
+          进行中
+      </view>
+    </i-step>
+  </i-steps> -->
   </view>
   <view class='game-seat'>
+    <!-- id="showweuiactionsheet" -->
     <view wx:for="{{player}}" wx:for-index="index" wx:key="idx" class="player-item" 
     bindtap='openDetail' data-index="{{index}}"
-    style="background:{{item.role=='狼人'?'#e06c75': (item.role==''?'#fff':'#fffda5')}}; border-color:{{item.status=='0'?'#fff':'#3482cb'}}">
+    style="background:{{item.role=='狼人'?'#e06c75': (item.role==''?'#fff':'#fffda5')}}; border-color:{{item.status=='0'?'#eee':'#3482cb'}};"
+    >
       {{index + 1}}{{item.role}}
     </view>
   </view>
+
+  <view class='tip'>(蓝色圈圈包围表示生存)</view>
+
+  <!-- <view>计时</view> -->
+  <view class='random-number-box'>
+    <i-button type="primary" bind:click="getRandomNumber"
+      shape="circle" i-class="random-number-btn">随机发言</i-button>
+    <view class='random-number'> {{randomNumber}} </view>
+  </view>
+  
   <action-sheet hidden="{{detailHidden}}" bindchange="switchDetailMenu">
     <view class='detail-menu'>
       <view class='radio-label'>{{currentIdx + 1}}号玩家 身份：</view>
@@ -30,4 +54,6 @@
       </view>
     </view>
   </action-sheet>
+
+
 </view>

@@ -5,8 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    openid: '',
   },
-  testLogin: function () {
+  testLogin() {
+    const that = this;
     wx.login({
       success: function (res) {
         if (res.code) {
@@ -23,7 +25,12 @@ Page({
               'content-type': 'application/json' // 默认值
             },
             success: function (d) {
-              console.log('登录成功', d.data)
+              console.log('登录成功', d.data);
+              that.setData({
+                openid: d.data.openid,
+              })
+              // this.data.openid = d.data.openid;
+              // that.uploadUser(d);
             }
           })
         } else {
@@ -46,8 +53,42 @@ Page({
       }
     })
   },
+  uploadUser(openid, userinfo) {
+    console.log('hahaha');
+    wx.request({
+      url: 'https://www.luoxj.club/uploaduser',
+      method: 'POST',
+      data: {
+        openid: openid,
+        userInfo: userinfo,
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (d) {
+        console.log('upload成功', d)
+      }
+    })
+  },
   getUserInfo(data) {
-    console.log(data);
+    console.log(data.detail);
+    if (this.data.openid) {
+      this.uploadUser(this.data.openid, data.detail.userInfo);
+    }
+  },
+  getInfoFromRequest() {
+    wx.request({
+      url: `https://www.luoxj.club/getuser/${this.data.openid}`,
+      // method: 'POST',
+      data: {
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (d) {
+        console.log('获取成功', d)
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载

@@ -24,6 +24,11 @@ App({
   },
 
   globalData: {
-    userInfo: null
-  }
+    userInfo: null,
+    playerNumber: '12',
+  },
+
+  changePlayerNumber(number) {
+    this.globalData.playerNumber = number;
+  },
 })

@@ -1,31 +1,57 @@
 /* pages/gameAssist/gameAssist.wxss */
+.game-assist-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .title{
   height: 100rpx;
   padding: 20px;
   text-align: center;
 }
 .game-seat{
-  height: 890rpx;
-  padding: 0 80rpx 0 60rpx;
+  height: 850rpx;
+  padding: 0 80rpx;
   display: flex;
-  flex-direction:column;
+  /* flex-direction:column; */
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  /* justify-content: flex-start; */
 }
 .player-item{
-  flex-direction:column;
-  width: 160rpx;
+  /* flex-direction:column; */
+  width: 140rpx;
   height: 100rpx;
   line-height: 80rpx;
-  border: 10px solid #3482cb;
+  border: 18rpx solid #3482cb;
+  border-radius: 30rpx;
   text-align: center;
-  margin-top: 4rpx;
-  margin-left: 60rpx;
-  position: relative;
+  /* margin-top: 2rpx; */
+  /* margin-left: 60rpx; */
+  /* margin-left: 20rpx; */
 }
 .detail-menu{
   padding: 20rpx 40rpx;
 }
 .radio-label{
   padding: 20rpx 0;
+}
+.tip{
+  text-align: center;
+}
+.random-number-box{
+  margin-top: 180rpx;
+}
+.random-number-btn{
+  width: 400rpx;
+}
+.random-number{
+  margin: 40rpx auto;
+  width: 200rpx;
+  height: 80rpx;
+  border: 4rpx solid #ccc;
+  text-align: center;
+  line-height: 80rpx;
+  color: #3482cb;
+  font-size: 50rpx;
 }

@@ -15,9 +15,9 @@ Page({
       url: '../introduce/introduce'
     })
   },
-  goGameAssisPage: function () {
+  goGameSettingPage: function () {
     wx.navigateTo({
-      url: '../gameAssist/gameAssist'
+      url: '../gameSetting/gamesetting'
     })
   },
   onLoad: function () {

@@ -1,4 +1,5 @@
 // pages/gameAssist/gameAssist.js
+var app = getApp();
 Page({
 
   /**
@@ -24,10 +25,15 @@ Page({
       { value: '0', name:'死亡' },
     ],
     godRoles: ['预言家', '女巫', '猎人', '守卫', '白痴', 'X'],
+    playerNumber: null,
+    randomNumber: 0,
   },
   initPlayerData() {
+    this.setData({
+      playerNumber: Number(app.globalData.playerNumber),
+    });
     let arr = [];
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 1; i <= this.data.playerNumber; i++) {
       arr.push({
         idx: i,
         role: '',
@@ -40,7 +46,7 @@ Page({
   },
   openDetail(event) {
     this.setData({
-      detailHidden: false,
+      detailHidden: !this.data.detailHidden,
       currentIdx: event.currentTarget.dataset['index'],
     })
     this.initPlayerInfo();
@@ -89,6 +95,11 @@ Page({
     arr[this.data.currentIdx]['status'] = e.detail.value;
     this.setData({
       player: arr,
+    })
+  },
+  getRandomNumber() {
+    this.setData({
+      randomNumber: Math.ceil(Math.random() * Number(this.data.playerNumber)),
     })
   },
   /**

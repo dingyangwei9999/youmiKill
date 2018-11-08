@@ -32,3 +32,6 @@ text{
   /* width: 50rpx; */
   font-weight: bold;
 } 
+.function-btn{
+  width: 300rpx;
+}

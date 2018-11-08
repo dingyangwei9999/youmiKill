@@ -1,5 +1,7 @@
 <!--pages/signup/signup.wxml-->
-<text>pages/signup/signup.wxml</text>
+<text>测试login</text>
 <button class='test-login' bindtap='testLogin'>测试登录</button>
 <button class='test-login' bindtap='testAuthorize'>测试授权</button>
 <button open-type="getUserInfo" bindgetuserinfo='getUserInfo'>获取用户信息</button>
+<button class='test-login' bindtap='getInfoFromRequest'>从数据库请求信息</button>
+
